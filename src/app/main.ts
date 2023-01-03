@@ -7,6 +7,8 @@ addProduct({
   stock: 100,
   category: {
     id: '2',
-    name: 'c1'
+    name: 'c1',
+    createAt: new Date(),
+    updateAt: new Date(),
   }
 })
