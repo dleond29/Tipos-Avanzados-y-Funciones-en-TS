@@ -11,7 +11,7 @@ type example = Pick<Product, 'color' | 'description'>;
 
 // type updateProduct = Partial<Product>;
 
-export interface UpdateProductDto extends Partial<CreateProductDto>{
+export interface UpdateProductDto extends Partial<CreateProductDto>, Pick<Product, 'updatedAt'> {}{
 
 }
 

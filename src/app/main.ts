@@ -22,5 +22,5 @@ const product = products[0];
 updateProduct(product.id, {
   title: 'New title',
   stock: 80,
-
+  updatedAt: faker.date.recent(),
 })
