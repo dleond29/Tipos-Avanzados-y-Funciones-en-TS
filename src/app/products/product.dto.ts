@@ -8,3 +8,12 @@ export interface CreateProductDto extends Omit<Product, 'id' | 'createdAt' | 'up
 
 
 type example = Pick<Product, 'color' | 'description'>;
+
+// type updateProduct = Partial<Product>;
+
+export interface UpdateProductDto extends Partial<CreateProductDto>{
+
+}
+
+//All is mandatory
+type example2 = Required<Product>;
