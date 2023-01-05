@@ -1,7 +1,7 @@
 import { faker } from '@faker-js/faker';
 import { Id } from '../base.model';
 import { Product} from './product.model'
-import { CreateProductDto, UpdateProductDto } from './product.dto'
+import { CreateProductDto, UpdateProductDto, FindProductDto } from './product.dto'
 
 
 
@@ -36,15 +36,24 @@ export const updateProduct = (id: Id, changes: UpdateProductDto ): Product => {
   return products[index]
 }
 
-export const deleteProduct = (id: Id) => {
-  const index: number = getIndex(id)
-  index === -1 && throwError('Product not Found')
-  products.splice(index, 1)
-  return id
+export const findProducts = (dto: FindProductDto): Product[] => {
+  //code
+  // dto.color = 'blue';
+  return products;
+
+
 }
+
 
 export const findProduct = (id: Id) => {
   const index: number = getIndex(id)
   index === -1 && throwError('Product not Found')
   return products[index]
+}
+
+export const deleteProduct = (id: Id) => {
+  const index: number = getIndex(id)
+  index === -1 && throwError('Product not Found')
+  products.splice(index, 1)
+  return id
 }
